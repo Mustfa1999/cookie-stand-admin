@@ -17,24 +17,25 @@ function ReportTable(props) {
             
             <tbody>
               {
-              props.rows.map(row => {
-                  return (
-                    <tr>
-                        <td className="border-2 border-black bg-emerald-300 py-2">
+                
+                props.rows.map(row => {
+                    return(
+                        <tr>
+                            <td className="border-2 border-black bg-emerald-300 py-2">
                             {row.location}</td>
 
-                        {hourly_sales.map((cell=>{
-                            return (<td className="border-2 border-black bg-emerald-300 py-2">
-                                {cell}</td>);}))
-                        }
+                            {
+                                row.values.map(num => {
+                                    return (<td className="border-2 border-black bg-emerald-300 py-2">{num}</td>);
+                                })
+                            }
 
-                        <td className="border-2 border-black bg-emerald-300 py-2">
-                            {hourly_sales.reduce((total, curr) => total += curr, 0)}
-                        </td>
-
-                    </tr>
-                  );
-              })
+                            <td className="border-2 border-black bg-emerald-300 py-2">
+                            {row.values.reduce((total, curr) => total += curr, 0)}
+                            </td>
+                        </tr>
+                    );
+                })
             }
             
             </tbody>
@@ -42,15 +43,15 @@ function ReportTable(props) {
             <tfoot className="font-bold">
                 <td className="border-2 border-black bg-emerald-600">Totals</td>
 
-                {hourly_sales.map((cell=>{
-                    return (<td className="border-2 border-black bg-emerald-600">
-                        {cell * props.rows.length}</td>);}))
+                {
+                    props.totals.map(num => {
+                        
+                        return (<td className="border-2 border-black bg-emerald-600">{num}</td>);
+                    })
                 }
 
                 <td className="border-2 border-black bg-emerald-600">
-                    {
-                        hourly_sales.reduce((total, curr) => total += curr, 0) * props.rows.length
-                    }
+                    {props.totals.reduce((total, curr) => total += curr, 0)}
                 </td>
 
             </tfoot>

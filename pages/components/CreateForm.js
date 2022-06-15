@@ -13,7 +13,7 @@ function CreateForm(props) {
                 <label className="mx-2 my-2">Location</label>
                 <input name="loc" className="w-4/5 h-full mx-2 my-2 bg-gray-200 rounded-md 
                 shadow-md" 
-                type={"text"} placeholder={"Bercelona"}/>
+                type={"text"} placeholder={"Bercelona"} value="Bercelona"/>
               </div>
   
               <div className="grid grid-cols-4 grid-rows-2 gap-1">
@@ -24,9 +24,9 @@ function CreateForm(props) {
                 <button className="row-span-2 bg-emerald-700 w-full	h-full"
                 type="submit">Create</button>  
   
-                <input name="min" className="mx-2 mb-2 h-fit" type={"number"} placeholder={"2"}/>
-                <input name="max" className="mx-2 mb-2 h-fit" type={"number"} placeholder={"4"}/>
-                <input name="avg" className="mx-2 mb-2 h-fit" type={"text"} placeholder={"2.5"}/>
+                <input name="min" value="0" className="mx-2 mb-2 h-fit" type={"number"} placeholder={"2"}/>
+                <input name="max" value="100" className="mx-2 mb-2 h-fit" type={"number"} placeholder={"4"}/>
+                <input name="avg" value="50" className="mx-2 mb-2 h-fit" type={"text"} placeholder={"2.5"}/>
               </div>
         </form>
   
