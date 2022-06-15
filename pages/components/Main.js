@@ -1,5 +1,5 @@
 
-function Main({ handleSubmit, cookies, result }) {
+function Main({ handleSubmit, cookies }) {
   return (
     <>
     <div className="w-full bg-emerald-100 flex items-center content-center 

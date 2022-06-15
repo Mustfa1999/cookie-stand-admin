@@ -1,7 +1,7 @@
-function Footer() {
+function Footer(props) {
     return(
-        <p className="py-5 px-10 bg-emerald-600 text-black text-xl">
-            &copy; 2021</p>
+        <p className="py-2 mt-10 px-10 bg-emerald-600 text-black text-xl w-full">
+           {props.counter} Locations World Wide</p>
     )
 }
 
