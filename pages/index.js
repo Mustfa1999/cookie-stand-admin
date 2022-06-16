@@ -1,41 +1,17 @@
 import CookieStandAdmin from './components/CookieStandAdmin'
 import LoginForm from './components/LoginForm'
-
-import {useState, useEffect} from 'react'
-import axios from 'axios';
+import {useState } from 'react'
 
 function Home() { 
-  const [token, setToken] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  function loginHandler(e) {
-    e.preventDefault();
-    const userInfo = {
-      username: e.target.username.value,
-      password: e.target.password.value,
-    };
-    console.log(userInfo);
-
-    if (userInfo.username.length != 0 && userInfo.password.length != 0) {
-      // setIsLoggedIn(true);
-      // console.log(isLoggedIn);
-
-    } else {
-      alert("Fill all required fields !!");
-    }
-
-    // userInfo.username.length != 0 && userInfo.password.length != 0 ?
-    // setIsLoggedIn(true) :
-    // alert("Fill all required fields !!");
-  }
-
+  const [token, setToken] = useState('');
+  const [isLogged, setIsLogged] = useState(false);
 
   return(
     <>
     {
-      isLoggedIn ?
-      (<CookieStandAdmin isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>) :
-      (<LoginForm loginHandler={loginHandler}/>)
+      isLogged ?
+      (<CookieStandAdmin token={token}/>) :
+      (<LoginForm setToken={setToken} setIsLogged={setIsLogged}/>)
     }
     </>
   )

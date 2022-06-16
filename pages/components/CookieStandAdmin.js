@@ -48,12 +48,12 @@ function CookieStandAdmin(props) {
         <title>Cookie Stand Admin</title>
       </Head>
 
-      <Header isLoggedIn={props.isLoggedIn} setIsLoggedIn={props.setIsLoggedIn}/>
+      <Header />
       <CreateForm handleSubmit={handleSubmit}/>
       {
         rows.length == 0 ? 
         (<h2 className="text-black text-2xl font-bold py-10">No Cookie Stands Available</h2>) : 
-        (<ReportTable rows={rows} totals={totals}/>) 
+        (<ReportTable rows={rows} totals={totals} token={props.token}/>) 
       }
       <Footer counter={counter}/>
     </div>
