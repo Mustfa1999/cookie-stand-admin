@@ -6,7 +6,7 @@ import ReportTable from './ReportTable'
 import { useState } from 'react'
 
 
-function CookieStandAdmin() {
+function CookieStandAdmin(props) {
   const [counter, setCounter] = useState(0);
   const [rows, setRows] = useState([]);
   const [totals, setTotals] = useState([0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
@@ -48,7 +48,7 @@ function CookieStandAdmin() {
         <title>Cookie Stand Admin</title>
       </Head>
 
-      <Header />
+      <Header isLoggedIn={props.isLoggedIn} setIsLoggedIn={props.setIsLoggedIn}/>
       <CreateForm handleSubmit={handleSubmit}/>
       {
         rows.length == 0 ? 

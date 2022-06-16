@@ -1,4 +1,9 @@
-function Header() {
+function Header(props) {
+    function logoutHandler(event) {
+        event.preventDefault();
+        props.setIsLoggedIn(false);
+      }
+
     return(
         <header className="py-2 px-2 bg-emerald-700 w-full flex 
         justify-between flex-row flex-wrap">
