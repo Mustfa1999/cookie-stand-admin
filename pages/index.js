@@ -10,7 +10,7 @@ function Home() {
     <>
     {
       isLogged ?
-      (<CookieStandAdmin token={token}/>) :
+      (<CookieStandAdmin setToken={setToken} setIsLogged={setIsLogged} token={token}/>) :
       (<LoginForm setToken={setToken} setIsLogged={setIsLogged}/>)
     }
     </>

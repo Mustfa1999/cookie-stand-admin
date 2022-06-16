@@ -12,8 +12,6 @@ function CookieStandAdmin(props) {
   const [totals, setTotals] = useState([0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
 
   const handleSubmit = (e) => {
-    console.log(totals);
-
     e.preventDefault();
     setCounter(counter + 1);
 
@@ -35,8 +33,6 @@ function CookieStandAdmin(props) {
         newTotals.push(values[i] + totals[i])
     }
     
-    console.log(newTotals);
-
     setRows([...rows, newRow]);
     setTotals(newTotals);
   }
@@ -48,7 +44,7 @@ function CookieStandAdmin(props) {
         <title>Cookie Stand Admin</title>
       </Head>
 
-      <Header />
+      <Header setToken={props.setToken} setIsLogged={props.setIsLogged}/>
       <CreateForm handleSubmit={handleSubmit}/>
       {
         rows.length == 0 ? 
